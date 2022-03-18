@@ -1,0 +1,28 @@
+#include<stdio.h>
+int binary(int n);//declaring the function
+int s=0;//global variable to store the binary
+int main()
+{
+    int a;
+    printf("enter the number ");
+    scanf("%d",&a);//inputting the value
+    binary(a);//running the function
+    printf("%d",s);//printing the answer
+}
+int binary(int n)
+{
+    if(n==1) //termination case for recursion
+    {
+        s=s*10+1; //detailed explnantion below
+        return 1;
+    }
+    if(n%2==0)              
+    {
+        s=s*10+0;
+        return binary(n/2);
+    }
+    else
+    {
+        s=s*10+1;
+        return binary(n/2);
+    }
